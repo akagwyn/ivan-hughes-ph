@@ -24,6 +24,7 @@ const useFlickrApiHome = ({ albumId }: useFlickrApiHomeProps) => {
 
   useEffect(() => {
     const apiKey = import.meta.env.VITE_API_KEY;
+
     const AlbumUrl = `https://www.flickr.com/services/rest/?method=flickr.photosets.getInfo&api_key=${apiKey}&photoset_id=${albumId}&user_id=194219353%40N05&format=json&nojsoncallback=1`;
 
     fetch(AlbumUrl)

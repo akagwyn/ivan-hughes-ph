@@ -1,29 +1,32 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
-import Home from "./Home";
-import Arquitectura from "./Albums/Arquitectura";
-import MaleGracia from "./Albums/MaleGracia";
-import BiciNena from "./Albums/BiciNena";
-import Biblioteca from "./Albums/Biblioteca";
-import Contacto from "./Contacto";
-import Sakatumba from "./Albums/Sakatumba";
-import Vitter from "./Albums/Vitter";
+
+const Home = lazy(() => import("./Home"));
+const Arquitectura = lazy(() => import("./Albums/Arquitectura"));
+const Biblioteca = lazy(() => import("./Albums/Biblioteca"));
+const MaleGracia = lazy(() => import("./Albums/MaleGracia"));
+const BiciNena = lazy(() => import("./Albums/BiciNena"));
+const Sakatumba = lazy(() => import("./Albums/Sakatumba"));
+const Vitter = lazy(() => import("./Albums/Vitter"));
+const Contacto = lazy(() => import("./Contacto"));
 
 export default function App() {
   return (
-    <div className="flex  flex-col bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen">
+    <div className="flex flex-col bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen mx-4">
       <Nav />
-
-      <Routes>
-        <Route path="/contacto" element={<Contacto />}></Route>
-        <Route path="/" element={<Home />} />
-        <Route path="/arquitectura" element={<Arquitectura />} />
-        <Route path="/malena-gracia" element={<MaleGracia />} />
-        <Route path="/biblioteca-nacional" element={<Biblioteca />} />
-        <Route path="/bici-nena" element={<BiciNena />} />
-        <Route path="/sakatumba" element={<Sakatumba />} />
-        <Route path="/vitter" element={<Vitter />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/contacto" element={<Contacto />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/arquitectura" element={<Arquitectura />} />
+          <Route path="/malena-gracia" element={<MaleGracia />} />
+          <Route path="/biblioteca-nacional" element={<Biblioteca />} />
+          <Route path="/bici-nena" element={<BiciNena />} />
+          <Route path="/sakatumba" element={<Sakatumba />} />
+          <Route path="/vitter" element={<Vitter />} />
+        </Routes>
+      </Suspense>
 
       <p className="text-center py-5 text-xs font-light text-zinc-500">
         © Ivan Gwyn Hughes Copyright 2023

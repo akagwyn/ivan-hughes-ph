@@ -11,10 +11,12 @@ export default function Nav() {
 
   const handleOpenMenu = () => {
     setIsMenuOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   const handleCloseMenu = () => {
     setIsMenuOpen(false);
+    document.body.style.overflow = "auto";
   };
 
   useEffect(() => {
@@ -30,36 +32,36 @@ export default function Nav() {
   }, []);
 
   return (
-    <div className="z-10 m-auto max-w-[1200px] w-full">
+    <div className="z-10 m-auto  w-full">
       {isDesktop && (
-        <div className="flex justify-between py-5  text-xl items-center md:px-4  ">
-          <Link to="/">
-            <p className="font-specter font-bold m-2 text-2xl text-center">
+        <ul className="flex justify-between py-5  text-xl items-center  ">
+          <li>
+            <Link to="/" className="font-specter font-bold m-2 text-2xl">
               Ivan Hughes
-            </p>
-          </Link>
+            </Link>
+          </li>
 
-          <div className="flex font-light text-zinc-500">
-            <Link to="/">
-              <p className="m-2" onClick={() => handleCloseMenu()}>
-                Sobre mi
-              </p>
+          <li className="flex font-light text-zinc-500">
+            <Link to="/" className="m-2" onClick={() => handleCloseMenu()}>
+              Sobre mi
             </Link>
-            <Link to="/contacto">
-              <p className="m-2" onClick={() => handleCloseMenu()}>
-                Contacto
-              </p>
+            <Link
+              to="/contacto"
+              className="m-2"
+              onClick={() => handleCloseMenu()}
+            >
+              Contacto
             </Link>
-            <Link to="https://www.instagram.com/ivxnbelike/" target="_blank">
-              <p
-                className="p-2 align-baseline text-center"
-                onClick={() => handleCloseMenu()}
-              >
-                Instagram
-              </p>
+            <Link
+              to="https://www.instagram.com/ivxnbelike/"
+              target="_blank"
+              className="p-2 "
+              onClick={() => handleCloseMenu()}
+            >
+              Instagram
             </Link>
-          </div>
-        </div>
+          </li>
+        </ul>
       )}
       {showMobileMenu && !isMenuOpen && (
         <nav className="">
@@ -103,7 +105,7 @@ export default function Nav() {
                 Contacto
               </p>
             </Link>
-            <Link to="/">
+            <Link to="https://www.instagram.com/ivxnbelike/" target="_blank">
               <p className="m-2" onClick={() => handleCloseMenu()}>
                 Instagram
               </p>

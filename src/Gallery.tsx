@@ -43,7 +43,7 @@ export default function FlickrGallery({ albumId }: FlickrGallery) {
 
   return (
     <>
-      <div className=" m-auto max-w-[1440px] ">
+      <div className=" m-auto  ">
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
@@ -52,7 +52,7 @@ export default function FlickrGallery({ albumId }: FlickrGallery) {
           {photos.map((photo, index) => (
             <div>
               <img
-                className=" m-auto w-[350px]  h-full  lg:mb-0 cursor-pointer object-cover"
+                className=" m-auto h-full lg:mb-0 cursor-pointer object-cover"
                 key={photo.id}
                 src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_z.jpg`}
                 alt={photo.title}
