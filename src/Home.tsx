@@ -3,10 +3,12 @@ import useFlickrApiHome from "./useFlickrApiHome";
 
 export default function Home() {
   return (
-    <div className="lg:grid lg:grid-cols-3 lg:gap-10 m-auto max-w-[1200px]">
+    <div className="lg:grid lg:grid-cols-4 lg:gap-10 m-auto ">
       <Album albumId="72177720312315160" direction="/arquitectura" />
       <Album albumId="72157720059805218" direction="/biblioteca-nacional" />
+      <Album albumId="72177720312342341" direction="/naturaleza" />
       <Album albumId="72177720312221931" direction="/malena-gracia" />
+      <Album albumId="72177720312365544" direction="/sofia-kohon" />
       <Album albumId="72177720312336748" direction="/bici-nena" />
       <Album albumId="72177720312322062" direction="/sakatumba" />
       <Album albumId="72177720312322277" direction="/vitter" />

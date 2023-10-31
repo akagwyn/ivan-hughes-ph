@@ -43,7 +43,7 @@ export default function FlickrGallery({ albumId }: FlickrGallery) {
 
   return (
     <>
-      <div className=" m-auto  ">
+      <div className="m-auto">
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
@@ -52,7 +52,7 @@ export default function FlickrGallery({ albumId }: FlickrGallery) {
           {photos.map((photo, index) => (
             <div>
               <img
-                className=" m-auto h-full lg:mb-0 cursor-pointer object-cover"
+                className=" m-auto h-full lg:mb-0 cursor-pointer object-cover "
                 key={photo.id}
                 src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_z.jpg`}
                 alt={photo.title}
@@ -64,7 +64,10 @@ export default function FlickrGallery({ albumId }: FlickrGallery) {
       </div>
 
       {isLightboxOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-zinc-950 transition-100 h-full">
+        <div
+          className="fixed inset-0 flex items-center justify-center z-50 bg-zinc-950 transition-100 h-full"
+          
+        >
           <IconContext.Provider value={{ color: "white" }}>
             <div className="fixed inset-0 flex items-center z-50 justify-between">
               <div onClick={() => handleLeft()} className="cursor-pointer m-3">

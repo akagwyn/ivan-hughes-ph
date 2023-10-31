@@ -6,7 +6,7 @@ export default function BiciNena() {
       <a
         href="https://www.instagram.com/bici.nena/"
         target="_blank"
-        className="text-center m-auto pb-5 text-lg"
+        className="text-center m-auto pb-5 text-lg text-zinc-600"
       >
         Bici Nena
       </a>
