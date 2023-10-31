@@ -15,7 +15,7 @@ const Contacto = lazy(() => import("./Contacto"));
 
 export default function App() {
   return (
-    <div className="flex flex-col bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen md:px-4">
+    <div className="flex flex-col  bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen md:px-4">
       <Nav />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>

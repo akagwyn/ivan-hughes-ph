@@ -26,6 +26,7 @@ function Album({ albumId, direction }: Album) {
         <Link to={direction} className="pb-2 m-auto ">
           <div className="group relative m-auto md:mx-2  md:bg-black md:w-[350px] md:h-[438px] ">
             <img
+              loading="lazy"
               src={`https://live.staticflickr.com/${photo.server}/${photo.primary}_${photo.secret}_c.jpg`}
               className="h-full w-full mb-2 object-cover cursor-pointer md:absolute md:top-0 md:left-0 md:opacity-100 md:group-hover:opacity-60"
             />

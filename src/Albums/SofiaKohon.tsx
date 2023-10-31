@@ -1,6 +1,6 @@
 import Gallery from "../Gallery";
 
-export default function Arquitectura() {
+export default function SofiaKohon() {
   return (
     <div className="flex flex-col">
       <a
