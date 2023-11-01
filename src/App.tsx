@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
+import Skeleton from "./Skeleton";
 
 const Home = lazy(() => import("./Home"));
 const Arquitectura = lazy(() => import("./Albums/Arquitectura"));
@@ -15,7 +16,7 @@ const Contacto = lazy(() => import("./Contacto"));
 
 export default function App() {
   return (
-    <div className="flex flex-col bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen md:px-4">
+    <div className="grid grid-rows-[auto,1fr,auto] bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen md:px-4">
       <Nav />
       <Suspense
         fallback={

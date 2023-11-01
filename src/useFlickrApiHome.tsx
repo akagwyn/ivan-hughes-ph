@@ -4,23 +4,30 @@ type useFlickrApiHomeProps = {
   albumId: string;
 };
 
-const useFlickrApiHome = ({ albumId }: useFlickrApiHomeProps) => {
-  interface Photo {
-    id: string;
-    server: string;
-    secret: string;
-    title: {
-      _content: string;
-    };
-    originalsecret: string;
-    primary: string;
-  }
-
-  type FlickrApiResponse = {
-    photoset: Photo;
+interface UseFlickrApiHomeResponse {
+  album: Photo | null;
+  isLoading: boolean;
+}
+interface Photo {
+  id: string;
+  server: string;
+  secret: string;
+  title: {
+    _content: string;
   };
+  originalsecret: string;
+  primary: string;
+}
 
+type FlickrApiResponse = {
+  photoset: Photo;
+};
+
+const useFlickrApiHome = ({
+  albumId,
+}: useFlickrApiHomeProps): UseFlickrApiHomeResponse => {
   const [album, setAlbum] = useState<Photo | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const apiKey = import.meta.env.VITE_API_KEY;
@@ -36,13 +43,14 @@ const useFlickrApiHome = ({ albumId }: useFlickrApiHomeProps) => {
       })
       .then((data: FlickrApiResponse) => {
         setAlbum(data.photoset);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Couldn't load album photos: ", error);
       });
   }, [albumId]);
 
-  return album;
+  return { album, isLoading };
 };
 
 export default useFlickrApiHome;
