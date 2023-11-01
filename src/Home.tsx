@@ -43,6 +43,7 @@ function Album({ albumId, direction }: AlbumProps) {
           }}
         >
           <img
+            style={{ width: "320", height: "400" }}
             src={`https://live.staticflickr.com/${album.server}/${album.primary}_${album.secret}.jpg`}
             className="h-full w-full mb-2 object-cover cursor-pointer md:absolute md:top-0 md:left-0 md:group-hover:blur-sm duration-200  "
             alt={`${album.title._content}`}
