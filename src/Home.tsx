@@ -22,11 +22,15 @@ function Album({ albumId, direction }: AlbumProps) {
   const { album, isLoading } = useFlickrApiHome({ albumId });
 
   if (isLoading) {
-    return <Skeleton />; // Render skeleton while loading
+    return <Skeleton />;
   }
 
   if (!album) {
-    return <div>Error loading album data</div>; // Handle error loading album data
+    return (
+      <div className="flex items-center justify-center h-screen">
+        Error loading album data
+      </div>
+    );
   }
 
   return (
