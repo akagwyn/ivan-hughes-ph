@@ -32,10 +32,10 @@ function Album({ albumId, direction }: AlbumProps) {
   return (
     <main className="relative flex m-auto w-full ">
       <Link to={direction} className="pb-2 m-auto">
-        <div className="group relative m-auto md:mx-2 sm:w-min-screen md:bg-black md:min-w-[300px] md:min-h-[375px] ">
+        <div className="group relative m-auto md:mx-2 w-screen md:w-[320px] md:h-[400px] overflow-hidden">
           <img
-            src={`https://live.staticflickr.com/${album.server}/${album.primary}_${album.secret}_c.jpg`}
-            className="h-full w-full mb-2 object-cover cursor-pointer md:absolute md:top-0 md:left-0 md:opacity-100 md:group-hover:opacity-60"
+            src={`https://live.staticflickr.com/${album.server}/${album.primary}_${album.secret}.jpg`}
+            className="h-full w-full mb-2 object-cover cursor-pointer md:absolute md:top-0 md:left-0 md:group-hover:blur-sm duration-200"
             alt={`${album.title._content}`}
           />
           <div className="md:opacity-0 md:group-hover:opacity-100 md:flex md:absolute md:inset-0 md:items-center md:justify-center md:z-10">
