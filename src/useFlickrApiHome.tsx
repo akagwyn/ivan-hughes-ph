@@ -38,7 +38,7 @@ const useFlickrApiHome = ({ albumId }: useFlickrApiHomeProps) => {
         setAlbum(data.photoset);
       })
       .catch((error) => {
-        console.error("Error al cargar las fotos del álbum: ", error);
+        console.error("Couldn't load album photos: ", error);
       });
   }, [albumId]);
 

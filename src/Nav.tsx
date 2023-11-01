@@ -32,22 +32,22 @@ export default function Nav() {
   }, []);
 
   return (
-    <div className="z-10 m-auto  w-full">
+    <header className="z-10 m-auto w-full">
       {isDesktop && (
-        <ul className="flex justify-between py-5  text-xl items-center  ">
+        <ul className="flex justify-between text-xl items-center py-5">
           <li>
-            <Link to="/" className="font-specter font-bold m-2 text-2xl">
+            <Link to="/" className="font-specter font-bold px-2 text-2xl">
               Ivan Hughes
             </Link>
           </li>
 
           <li className="flex font-light text-zinc-500">
-            <Link to="/" className="m-2" onClick={() => handleCloseMenu()}>
+            <Link to="/" className="px-2" onClick={() => handleCloseMenu()}>
               Sobre mi
             </Link>
             <Link
               to="/contacto"
-              className="m-2"
+              className="px-2"
               onClick={() => handleCloseMenu()}
             >
               Contacto
@@ -55,7 +55,7 @@ export default function Nav() {
             <Link
               to="https://www.instagram.com/ivxnbelike/"
               target="_blank"
-              className="p-2 "
+              className="px-2"
               onClick={() => handleCloseMenu()}
             >
               Instagram
@@ -113,6 +113,6 @@ export default function Nav() {
           </div>
         </div>
       )}
-    </div>
+    </header>
   );
 }

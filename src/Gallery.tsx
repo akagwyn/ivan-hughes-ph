@@ -52,7 +52,7 @@ export default function FlickrGallery({ albumId }: FlickrGallery) {
           {photos.map((photo, index) => (
             <div>
               <img
-                className="m-auto h-full lg:mb-0 cursor-pointer object-cover"
+                className="m-auto h-full w-full lg:mb-0 cursor-pointer object-cover"
                 loading="lazy"
                 key={photo.id}
                 src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_z.jpg`}

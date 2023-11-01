@@ -15,9 +15,15 @@ const Contacto = lazy(() => import("./Contacto"));
 
 export default function App() {
   return (
-    <div className="flex flex-col  bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen md:px-4">
+    <div className="flex flex-col bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen md:px-4">
       <Nav />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center h-screen">
+            Cargando...
+          </div>
+        }
+      >
         <Routes>
           <Route path="/contacto" element={<Contacto />}></Route>
           <Route path="/" element={<Home />} />
@@ -32,9 +38,9 @@ export default function App() {
         </Routes>
       </Suspense>
 
-      <p className="text-center py-5 text-xs font-light text-zinc-500">
+      <footer className="text-center py-5 text-xs font-light text-zinc-500">
         © Ivan Gwyn Hughes Copyright 2023
-      </p>
+      </footer>
     </div>
   );
 }

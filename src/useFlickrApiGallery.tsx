@@ -16,7 +16,7 @@ const useFlickrApi = ({ albumId }: useFlickrApi) => {
 
   useEffect(() => {
     const apiKey = import.meta.env.VITE_API_KEY;
-    const GalleryUrl = ` https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${apiKey}&photoset_id=${albumId}&user_id=194219353%40N05&extras=original_format&format=json&nojsoncallback=1`;
+    const GalleryUrl = `https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${apiKey}&photoset_id=${albumId}&user_id=194219353%40N05&extras=original_format&format=json&nojsoncallback=1`;
 
     fetch(GalleryUrl)
       .then((response) => {
@@ -33,6 +33,8 @@ const useFlickrApi = ({ albumId }: useFlickrApi) => {
         console.error("Error al cargar las fotos del álbum: ", error);
       });
   }, [albumId]);
+
+  console.log(photos);
 
   return photos;
 };
