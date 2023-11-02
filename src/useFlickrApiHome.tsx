@@ -15,7 +15,7 @@ interface Photo {
   title: {
     _content: string;
   };
-  originalsecret: string;
+  count_photos: string;
   primary: string;
 }
 

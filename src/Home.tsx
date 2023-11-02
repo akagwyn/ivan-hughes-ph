@@ -38,7 +38,7 @@ function Album({ albumId, direction }: AlbumProps) {
   if (!album) {
     return (
       <div className="flex items-center justify-center h-screen">
-        Error loading album data
+        Error al cargar fotos
       </div>
     );
   }
@@ -53,7 +53,7 @@ function Album({ albumId, direction }: AlbumProps) {
           }}
         >
           <img
-            src={`https://live.staticflickr.com/${album.server}/${album.primary}_${album.secret}.jpg`}
+            src={`https://live.staticflickr.com/${album.server}/${album.primary}_${album.secret}_b.jpg`}
             className="h-full w-full mb-2 object-cover cursor-pointer md:absolute md:top-0 md:left-0 md:group-hover:blur-sm duration-200  "
             alt={`${album.title._content}`}
           />
