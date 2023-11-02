@@ -3,7 +3,7 @@
 // import { IconContext } from "react-icons";
 // import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import useFlickrApiGallery from "./useFlickrApiGallery";
-import Masonry from "react-masonry-css";
+// import Masonry from "react-masonry-css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 
 type FlickrGallery = { albumId: string };
@@ -34,13 +34,13 @@ export default function FlickrGallery({ albumId }: FlickrGallery) {
   //       : prevIndex + 1
   //   );
   // };
-
-  const breakpointColumnsObj = {
-    default: 6,
-    1100: 6,
-    700: 4,
-    500: 1,
-  };
+  //aaaaa
+  // const breakpointColumnsObj = {
+  //   default: 6,
+  //   1100: 6,
+  //   700: 4,
+  //   500: 1,
+  // };
 
   return (
     <>
