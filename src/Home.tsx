@@ -28,10 +28,10 @@ function Album({ albumId, direction }: AlbumProps) {
 
   if (isLoading) {
     return (
-      <>
+      <div className="h-[550px] sm:h-[400px]">
         <div className="w-screen h-[500px] md:w-[320px] md:h-[400px] mb-2 md:mx-2 bg-zinc-300 animate-pulse " />
         <div className="h-[25px] w-screen bg-zinc-300 animate-pulse sm:hidden" />
-      </>
+      </div>
     );
   }
 
