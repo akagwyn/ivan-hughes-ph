@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import useFlickrApiHome from "./useFlickrApiHome";
-import Skeleton from "./Skeleton";
 
 export default function Home() {
   return (
