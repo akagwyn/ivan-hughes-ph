@@ -55,7 +55,7 @@ export default function FlickrGallery({ albumId }: FlickrGallery) {
                 className="m-auto h-full w-full lg:mb-0 cursor-pointer object-cover"
                 loading="lazy"
                 key={photo.id}
-                src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_z.jpg`}
+                src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
                 alt={photo.title}
                 onClick={() => handleClickImage(index)}
               />

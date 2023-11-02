@@ -4,7 +4,7 @@ import Skeleton from "./Skeleton";
 
 export default function Home() {
   return (
-    <main className="grid md:gap-10 lg:grid-cols-4 md:grid-cols-2 m-auto min-h-screen">
+    <main className="grid grid-cols-1 gap-1 md:gap-10 lg:grid-cols-4 md:grid-cols-2 m-auto min-h-screen">
       <Album albumId="72177720312315160" direction="/arquitectura" />
       <Album albumId="72157720059805218" direction="/biblioteca-nacional" />
       <Album albumId="72177720312342341" direction="/naturaleza" />
@@ -34,10 +34,10 @@ function Album({ albumId, direction }: AlbumProps) {
   }
 
   return (
-    <div className="group relative flex m-auto ">
+    <div className="group relative flex m-auto h-[550px] sm:h-full">
       <Link to={direction} className="sm:pb-2 m-auto">
         <div
-          className="relative m-auto md:mx-2 w-screen h-[600px] md:w-[320px] md:h-[400px] bg-cover bg-center overflow-hidden"
+          className="relative m-auto md:mx-2 w-screen h-[500px] md:w-[320px] md:h-[400px] bg-cover bg-center overflow-hidden"
           style={{
             backgroundImage: `url(https://live.staticflickr.com/${album.server}/${album.primary}_${album.secret}_t.jpg)`,
           }}
@@ -49,7 +49,7 @@ function Album({ albumId, direction }: AlbumProps) {
           />
         </div>
         <div className="md:opacity-0 md:group-hover:opacity-100 md:flex md:absolute md:inset-0 md:items-center md:justify-center md:z-10">
-          <p className="mb-5  text-lg text-center md:mb-0 md:text-white md:uppercase">
+          <p className="text-lg text-center md:mb-0 md:text-white md:uppercase">
             {album.title._content}
           </p>
         </div>
