@@ -8,7 +8,7 @@ import Masonry from "react-masonry-css";
 type FlickrGallery = { albumId: string };
 
 export default function FlickrGallery({ albumId }: FlickrGallery) {
-  const photos = useFlickrApiGallery({ albumId });
+  const { photos, isLoading } = useFlickrApiGallery({ albumId });
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lighboxIndex, setLightboxIndex] = useState<number>(0);
 
@@ -35,34 +35,62 @@ export default function FlickrGallery({ albumId }: FlickrGallery) {
   };
 
   const breakpointColumnsObj = {
-    default: 6,
-    1100: 5,
+    default: 7,
+    1100: 7,
     700: 3,
     500: 1,
   };
 
+  interface ObjectWithDimensions {
+    id: number;
+  }
+
+  const skeleton: ObjectWithDimensions[] = Array.from(
+    { length: 21 },
+    (_, index) => ({
+      id: index + 1,
+    })
+  );
+
+  console.log(skeleton);
+
   return (
     <>
-      <div className="m-auto">
+      {isLoading ? (
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
-          {photos.map((photo, index) => (
-            <div>
-              <img
-                className="m-auto h-full w-full lg:mb-0 cursor-pointer object-cover"
-                loading="lazy"
-                key={photo.id}
-                src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
-                alt={photo.title}
-                onClick={() => handleClickImage(index)}
-              />
-            </div>
+          {skeleton.map((item) => (
+            <div
+              key={item.id}
+              className="h-[250px] max-w-[250px] bg-zinc-300"
+            ></div>
           ))}
         </Masonry>
-      </div>
+      ) : (
+        <div className="m-auto">
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {photos.map((photo, index) => (
+              <div>
+                <img
+                  className="m-auto h-full w-full lg:mb-0 cursor-pointer object-cover"
+                  loading="lazy"
+                  key={photo.id}
+                  src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`}
+                  alt={photo.title}
+                  onClick={() => handleClickImage(index)}
+                />
+              </div>
+            ))}
+          </Masonry>
+        </div>
+      )}
 
       {isLightboxOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-zinc-950 transition-100 h-full">
