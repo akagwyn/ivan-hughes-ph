@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./Nav";
+import "react-photo-view/dist/react-photo-view.css";
 
 const Home = lazy(() => import("./Home"));
 const Arquitectura = lazy(() => import("./Albums/Arquitectura"));
