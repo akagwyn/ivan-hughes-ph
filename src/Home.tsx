@@ -2,16 +2,22 @@ import { Link } from "react-router-dom";
 import useFlickrApiHome from "./useFlickrApiHome";
 
 export default function Home() {
+  const albums = [
+    { albumId: "72177720312315160", direction: "/arquitectura" },
+    { albumId: "72157720059805218", direction: "/biblioteca-nacional" },
+    { albumId: "72177720312342341", direction: "/naturaleza" },
+    { albumId: "72177720312221931", direction: "/malena-gracia" },
+    { albumId: "72177720312365544", direction: "/sofia-kohon" },
+    { albumId: "72177720312336748", direction: "/bici-nena" },
+    { albumId: "72177720312322062", direction: "/sakatumba" },
+    { albumId: "72177720312322277", direction: "/vitter" },
+  ];
+
   return (
     <main className="grid grid-cols-1 gap-1 md:gap-10 lg:grid-cols-4 md:grid-cols-2 m-auto min-h-screen">
-      <Album albumId="72177720312315160" direction="/arquitectura" />
-      <Album albumId="72157720059805218" direction="/biblioteca-nacional" />
-      <Album albumId="72177720312342341" direction="/naturaleza" />
-      <Album albumId="72177720312221931" direction="/malena-gracia" />
-      <Album albumId="72177720312365544" direction="/sofia-kohon" />
-      <Album albumId="72177720312336748" direction="/bici-nena" />
-      <Album albumId="72177720312322062" direction="/sakatumba" />
-      <Album albumId="72177720312322277" direction="/vitter" />
+      {albums.map((album) => (
+        <Album albumId={album.albumId} direction={album.direction} />
+      ))}
     </main>
   );
 }
@@ -22,9 +28,10 @@ function Album({ albumId, direction }: AlbumProps) {
 
   if (isLoading) {
     return (
-      <div className="h-[550px]">
-        <div className="w-screen h-[500px] md:w-[320px] md:h-[400px] bg-zinc-300 animate-pulse"></div>
-      </div>
+      <>
+        <div className="w-screen h-[500px] md:w-[320px] md:h-[400px] mb-2 md:mx-2 bg-zinc-300 animate-pulse " />
+        <div className="h-[25px] w-screen bg-zinc-300 animate-pulse sm:hidden" />
+      </>
     );
   }
 
