@@ -13,7 +13,6 @@ const useFlickrApi = ({ albumId }: useFlickrApi) => {
   }
 
   const [photos, setPhotos] = useState<Photo[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const apiKey = import.meta.env.VITE_API_KEY;
@@ -29,14 +28,13 @@ const useFlickrApi = ({ albumId }: useFlickrApi) => {
       .then((data) => {
         console.log();
         setPhotos(data.photoset.photo);
-        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Couldn't load album photos: ", error);
       });
   }, [albumId]);
 
-  return { photos, isLoading };
+  return photos;
 };
 
 export default useFlickrApi;

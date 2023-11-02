@@ -22,7 +22,11 @@ function Album({ albumId, direction }: AlbumProps) {
   const { album, isLoading } = useFlickrApiHome({ albumId });
 
   if (isLoading) {
-    return <Skeleton />;
+    return (
+      <div className="h-[550px]">
+        <div className="w-screen h-[500px] md:w-[320px] md:h-[400px] bg-zinc-300 animate-pulse"></div>
+      </div>
+    );
   }
 
   if (!album) {
