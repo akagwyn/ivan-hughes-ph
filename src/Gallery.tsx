@@ -1,5 +1,5 @@
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import { useFlickrApiGallery } from "./useFlickrApiGallery";
+import useFlickrApiGallery from "./useFlickrApiGallery";
 
 type FlickrGallery = { albumId: string };
 

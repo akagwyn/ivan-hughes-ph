@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useFlickrApiHome } from "./useFlickrApiHome";
+import useFlickrApiHome from "./useFlickrApiHome";
 
 export default function Home() {
   const albums = [

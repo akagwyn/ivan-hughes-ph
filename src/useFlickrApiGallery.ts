@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 type useFlickrApi = { albumId: string };
 
-export const useFlickrApiGallery = ({ albumId }: useFlickrApi) => {
+const useFlickrApiGallery = ({ albumId }: useFlickrApi) => {
   interface Photo {
     id: string;
     server: string;
@@ -39,3 +39,5 @@ export const useFlickrApiGallery = ({ albumId }: useFlickrApi) => {
   return { photos, isLoading };
   // return { photos };
 };
+
+export default useFlickrApiGallery;
