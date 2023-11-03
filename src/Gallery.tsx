@@ -1,27 +1,19 @@
 import { PhotoProvider, PhotoView } from "react-photo-view";
-import { useFlickrApiGallery, useFlickrApiHome } from "./hooks";
+import { useFlickrApiGallery } from "./hooks";
 
 type FlickrGallery = { albumId: string };
 
 export default function Gallery({ albumId }: FlickrGallery) {
-  const { photos } = useFlickrApiGallery({ albumId });
-  const { album } = useFlickrApiHome({ albumId });
-  const quantityOfPhotos = album?.count_photos;
-  let skeleton: Skeleton[] = [];
-
-  if (quantityOfPhotos) {
-    skeleton = Array.from(
-      { length: parseInt(quantityOfPhotos) },
-      (_, index) => ({
-        id: index + 1,
-      })
-    );
-  }
+  const { photos, isLoading } = useFlickrApiGallery({ albumId });
   interface Skeleton {
     id: number;
   }
 
-  if (!photos) {
+  const skeleton: Skeleton[] = Array.from({ length: 18 }, (_, index) => ({
+    id: index + 1,
+  }));
+
+  if (isLoading) {
     return (
       <main className="grid grid-cols-1 gap-1 md:gap-1 lg:grid-cols-6 md:grid-cols-4">
         {skeleton.map((i) => (
@@ -40,7 +32,7 @@ export default function Gallery({ albumId }: FlickrGallery) {
     >
       <PhotoProvider>
         {photos.map((photo, index) => (
-          <div className="h-[500px] md:h-[350px]  " key={index}>
+          <div className="h-[500px] md:h-[350px]" key={index}>
             <PhotoView src={`${photo.url_h}`}>
               <img
                 className="h-full w-full object-cover cursor-pointer"
