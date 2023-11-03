@@ -48,10 +48,10 @@ function Album({ albumId, direction }: AlbumProps) {
   }
 
   return (
-    <div className="group relative flex h-[550px] sm:h-[410px]">
+    <div className="m-auto group relative flex h-[550px] md:h-[410px]">
       <Link to={direction} className="sm:pb-2 md:pb-0 ">
         <div
-          className="relative sm:w-screen h-[500px] md:w-[300px] md:h-[410px] bg-cover bg-center overflow-hidden"
+          className="relative w-screen h-[500px] md:w-[300px] md:h-[410px] bg-cover bg-center overflow-hidden"
           style={{
             backgroundImage: `url(https://live.staticflickr.com/${album.server}/${album.primary}_${album.secret}_t.jpg)`,
           }}
