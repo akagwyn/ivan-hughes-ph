@@ -4,19 +4,19 @@ import Nav from "./Nav";
 import "react-photo-view/dist/react-photo-view.css";
 
 const Home = lazy(() => import("./Home"));
-const Arquitectura = lazy(() => import("./Albums/Arquitectura"));
-const Biblioteca = lazy(() => import("./Albums/Biblioteca"));
-const Naturaleza = lazy(() => import("./Albums/Naturaleza"));
-const MaleGracia = lazy(() => import("./Albums/MaleGracia"));
-const SofiaKohon = lazy(() => import("./Albums/SofiaKohon"));
-const BiciNena = lazy(() => import("./Albums/BiciNena"));
-const Sakatumba = lazy(() => import("./Albums/Sakatumba"));
-const Vitter = lazy(() => import("./Albums/Vitter"));
+const Arquitectura = lazy(() => import("./albums/Arquitectura"));
+const Biblioteca = lazy(() => import("./albums/Biblioteca"));
+const Naturaleza = lazy(() => import("./albums/Naturaleza"));
+const MaleGracia = lazy(() => import("./albums/MaleGracia"));
+const SofiaKohon = lazy(() => import("./albums/SofiaKohon"));
+const BiciNena = lazy(() => import("./albums/BiciNena"));
+const Sakatumba = lazy(() => import("./albums/Sakatumba"));
+const Vitter = lazy(() => import("./albums/Vitter"));
 const Contacto = lazy(() => import("./Contacto"));
 
 export default function App() {
   return (
-    <div className="grid grid-rows-[auto,1fr,auto] bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen md:px-4">
+    <div className="grid grid-rows-[auto,1fr,auto] bg-zinc-50 text-zinc-800 font-lorimer-no-2 min-h-screen md:px-4 scroll-smooth">
       <Nav />
       <Suspense
         fallback={

@@ -1,7 +1,5 @@
-import useFlickrApiGallery from "./useFlickrApiGallery";
-import useFlickrApiHome from "./useFlickrApiHome";
-
 import { PhotoProvider, PhotoView } from "react-photo-view";
+import { useFlickrApiGallery, useFlickrApiHome } from "./hooks";
 
 type FlickrGallery = { albumId: string };
 
@@ -37,7 +35,9 @@ export default function Gallery({ albumId }: FlickrGallery) {
   }
 
   return (
-    <main className="grid grid-cols-1 gap-1 md:gap-1 lg:grid-cols-6 md:grid-cols-4">
+    <main
+      className={`grid grid-cols-1 gap-1 md:gap-1 lg:grid-cols-6 md:grid-cols-4`}
+    >
       <PhotoProvider>
         {photos.map((photo, index) => (
           <div className="h-[500px] md:h-[350px]  " key={index}>

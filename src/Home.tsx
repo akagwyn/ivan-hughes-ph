@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import useFlickrApiHome from "./useFlickrApiHome";
+import { useFlickrApiHome } from "./hooks";
 
 export default function Home() {
   const albums = [
@@ -14,9 +14,13 @@ export default function Home() {
   ];
 
   return (
-    <main className="grid grid-cols-1 gap-1 md:gap-10 lg:grid-cols-4 md:grid-cols-2 m-auto min-h-screen">
+    <main className="grid grid-cols-1 gap-4 md:gap-5 lg:grid-cols-4 lg:gap-10 md:grid-cols-2 m-auto min-h-screen">
       {albums.map((album) => (
-        <Album albumId={album.albumId} direction={album.direction} />
+        <Album
+          albumId={album.albumId}
+          direction={album.direction}
+          key={album.albumId}
+        />
       ))}
     </main>
   );
@@ -28,8 +32,8 @@ function Album({ albumId, direction }: AlbumProps) {
 
   if (isLoading) {
     return (
-      <div className="h-[550px] sm:h-[400px]">
-        <div className="w-screen h-[500px] md:w-[320px] md:h-[400px] mb-2 md:mx-2 bg-zinc-300 animate-pulse " />
+      <div className="h-[550px] sm:h-[410px]">
+        <div className="w-screen h-[500px] md:w-[300px] md:h-[410px] mb-2 md:pb-0 bg-zinc-300 animate-pulse " />
         <div className="h-[25px] w-screen bg-zinc-300 animate-pulse sm:hidden" />
       </div>
     );
@@ -44,17 +48,17 @@ function Album({ albumId, direction }: AlbumProps) {
   }
 
   return (
-    <div className="group relative flex m-auto h-[550px] sm:h-full">
-      <Link to={direction} className="sm:pb-2 m-auto">
+    <div className="group relative flex h-[550px] sm:h-full">
+      <Link to={direction} className="sm:pb-2 md:pb-0 ">
         <div
-          className="relative m-auto md:mx-2 w-screen h-[500px] md:w-[320px] md:h-[400px] bg-cover bg-center overflow-hidden"
+          className="relative sm:w-screen h-[500px] md:w-[300px] md:h-[410px] bg-cover bg-center overflow-hidden"
           style={{
             backgroundImage: `url(https://live.staticflickr.com/${album.server}/${album.primary}_${album.secret}_t.jpg)`,
           }}
         >
           <img
             src={`https://live.staticflickr.com/${album.server}/${album.primary}_${album.secret}_b.jpg`}
-            className="h-full w-full mb-2 object-cover cursor-pointer md:absolute md:top-0 md:left-0 md:group-hover:blur-sm duration-200  "
+            className="h-full w-full object-cover cursor-pointer md:absolute md:top-0 md:left-0 md:group-hover:blur-sm duration-200  "
             alt={`${album.title._content}`}
           />
         </div>

@@ -23,7 +23,7 @@ type FlickrApiResponse = {
   photoset: Photo;
 };
 
-const useFlickrApiHome = ({
+export const useFlickrApiHome = ({
   albumId,
 }: useFlickrApiHomeProps): UseFlickrApiHomeResponse => {
   const [album, setAlbum] = useState<Photo | null>(null);
@@ -52,5 +52,3 @@ const useFlickrApiHome = ({
 
   return { album, isLoading };
 };
-
-export default useFlickrApiHome;

@@ -32,7 +32,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="z-10 m-auto w-full">
+    <header className=" z-10 m-auto w-full">
       {isDesktop && (
         <ul className="flex justify-between text-xl items-center py-5">
           <li>
