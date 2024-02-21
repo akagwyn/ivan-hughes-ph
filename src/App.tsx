@@ -13,6 +13,7 @@ const BiciNena = lazy(() => import("./Albums/BiciNena"));
 const Sakatumba = lazy(() => import("./Albums/Sakatumba"));
 const Vitter = lazy(() => import("./Albums/Vitter"));
 const Contacto = lazy(() => import("./Contacto"));
+const SobreMi = lazy(() => import("./SobreMi"));
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contacto" element={<Contacto />}></Route>
+          <Route path="/sobre-mi" element={<SobreMi />}></Route>
           <Route path="/arquitectura" element={<Arquitectura />} />
           <Route path="/biblioteca-nacional" element={<Biblioteca />} />
           <Route path="/naturaleza" element={<Naturaleza />} />
