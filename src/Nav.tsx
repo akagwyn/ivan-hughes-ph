@@ -37,7 +37,7 @@ export default function Nav() {
         <ul className="flex justify-between text-xl items-center py-5">
           <li>
             <Link to="/" className="font-specter font-bold px-2 text-2xl">
-              Test dev
+              Test dev 2
             </Link>
           </li>
 
