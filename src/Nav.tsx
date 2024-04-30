@@ -42,7 +42,11 @@ export default function Nav() {
           </li>
 
           <li className="flex font-light text-zinc-500">
-            <Link to="/" className="px-2" onClick={() => handleCloseMenu()}>
+            <Link
+              to="/sobre-mi"
+              className="px-2"
+              onClick={() => handleCloseMenu()}
+            >
               Sobre mi
             </Link>
             <Link
@@ -53,7 +57,7 @@ export default function Nav() {
               Contacto
             </Link>
             <Link
-              to="https://www.instagram.com/ivxnbelike/"
+              to="https://www.instagram.com/ivan.gwyn/"
               target="_blank"
               className="px-2"
               onClick={() => handleCloseMenu()}
