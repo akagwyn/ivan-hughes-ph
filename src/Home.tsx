@@ -3,14 +3,14 @@ import useFlickrApiHome from "./useFlickrApiHome";
 
 export default function Home() {
   const albums = [
-    { albumId: "72177720312315160", direction: "/arquitectura" },
-    { albumId: "72157720059805218", direction: "/biblioteca-nacional" },
-    { albumId: "72177720312342341", direction: "/naturaleza" },
-    { albumId: "72177720312221931", direction: "/malena-gracia" },
-    { albumId: "72177720312365544", direction: "/sofia-kohon" },
+    { albumId: "72177720316605271", direction: "/sasha-eter" },
+    { albumId: "72177720316600292", direction: "/dum-chica" },
+    { albumId: "72177720316619534", direction: "/ayermaniana" },
+    { albumId: "72177720316600725", direction: "/club-audiovisual" },
+    { albumId: "72177720316613308", direction: "/juan-cruz-caos" },
     { albumId: "72177720312336748", direction: "/bici-nena" },
     { albumId: "72177720312322062", direction: "/sakatumba" },
-    { albumId: "72177720312322277", direction: "/vitter" },
+    { albumId: "72177720316606641", direction: "/winona-riders" },
   ];
 
   return (

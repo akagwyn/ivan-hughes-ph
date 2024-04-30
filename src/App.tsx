@@ -4,14 +4,14 @@ import Nav from "./Nav";
 import "react-photo-view/dist/react-photo-view.css";
 
 const Home = lazy(() => import("./Home"));
-const Arquitectura = lazy(() => import("./Albums/Arquitectura"));
-const Biblioteca = lazy(() => import("./Albums/Biblioteca"));
-const Naturaleza = lazy(() => import("./Albums/Naturaleza"));
-const MaleGracia = lazy(() => import("./Albums/MaleGracia"));
-const SofiaKohon = lazy(() => import("./Albums/SofiaKohon"));
+const SashaEter = lazy(() => import("./Albums/SashaEter"));
+const DumChica = lazy(() => import("./Albums/DumChica"));
+const Ayermaniana = lazy(() => import("./Albums/Ayermaniana"));
+const ClubAudiovisual = lazy(() => import("./Albums/ClubAudiovisual"));
+const JuanCruzCaos = lazy(() => import("./Albums/JuanCruzCaos"));
 const BiciNena = lazy(() => import("./Albums/BiciNena"));
 const Sakatumba = lazy(() => import("./Albums/Sakatumba"));
-const Vitter = lazy(() => import("./Albums/Vitter"));
+const WinonaRiders = lazy(() => import("./Albums/WinonaRiders"));
 const Contacto = lazy(() => import("./Contacto"));
 const SobreMi = lazy(() => import("./SobreMi"));
 
@@ -30,14 +30,14 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contacto" element={<Contacto />}></Route>
           <Route path="/sobre-mi" element={<SobreMi />}></Route>
-          <Route path="/arquitectura" element={<Arquitectura />} />
-          <Route path="/biblioteca-nacional" element={<Biblioteca />} />
-          <Route path="/naturaleza" element={<Naturaleza />} />
-          <Route path="/malena-gracia" element={<MaleGracia />} />
-          <Route path="/sofia-kohon" element={<SofiaKohon />} />
+          <Route path="/sasha-eter" element={<SashaEter />} />
+          <Route path="/dum-chica" element={<DumChica />} />
+          <Route path="/ayermaniana" element={<Ayermaniana />} />
+          <Route path="/club-audiovisual" element={<ClubAudiovisual />} />
+          <Route path="/juan-cruz-caos" element={<JuanCruzCaos />} />
           <Route path="/bici-nena" element={<BiciNena />} />
           <Route path="/sakatumba" element={<Sakatumba />} />
-          <Route path="/vitter" element={<Vitter />} />
+          <Route path="/winona-riders" element={<WinonaRiders />} />
         </Routes>
       </Suspense>
 

@@ -37,7 +37,7 @@ export default function Nav() {
         <ul className="flex justify-between text-xl items-center py-5">
           <li>
             <Link to="/" className="font-specter font-bold px-2 text-2xl">
-              Test dev 2
+              Ivan Hughes
             </Link>
           </li>
 
@@ -57,7 +57,7 @@ export default function Nav() {
               Contacto
             </Link>
             <Link
-              to="https://www.instagram.com/ivxnbelike/"
+              to="https://www.instagram.com/ivan.gwyn/"
               target="_blank"
               className="px-2"
               onClick={() => handleCloseMenu()}

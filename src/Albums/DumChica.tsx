@@ -1,16 +1,16 @@
 import Gallery from "../Gallery";
 
-export default function MaleGracia() {
+export default function DumChica() {
   return (
     <div className="flex flex-col">
       <a
-        href="https://www.instagram.com/malegracia/"
+        href="https://www.instagram.com/dumchica/"
         target="_blank"
         className="text-center m-auto pb-5 text-lg"
       >
-        Malena Gracia
+        Dum Chica
       </a>
-      <Gallery albumId="72177720312221931" />
+      <Gallery albumId="72177720316600292" />
     </div>
   );
 }

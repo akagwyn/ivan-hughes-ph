@@ -1,16 +1,16 @@
 import Gallery from "../Gallery";
 
-export default function SofiaKohon() {
+export default function WinonaRiders() {
   return (
     <div className="flex flex-col">
       <a
-        href="https://www.instagram.com/sofikohon/"
+        href="https://www.instagram.com/winona.riders/"
         target="_blank"
         className="text-center m-auto pb-5 text-lg"
       >
-        Sofia Kohon
+        Winona Riders
       </a>
-      <Gallery albumId="72177720312365544" />
+      <Gallery albumId="72177720316606641" />
     </div>
   );
 }
